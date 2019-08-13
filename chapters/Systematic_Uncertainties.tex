@@ -1,0 +1,81 @@
+\chapter{Systematic Uncertainties}
+\label{ch:sys_unc}
+
+The uncertainties we consider in our analysis for both signal and background are discussed in the following section in detail, 
+and the overall effect on the processes normalization and shapes is discussed in Table~\ref{tab:systematics}. {\color{red} TO DO: Table} 
+
+The major experimental sources of uncertainties for simulated backgrounds and signals include:
+\begin{itemize}
+
+  \item {\bf Integrated luminosity}: The systematic uncertainty on the integrated luminosity are $2.5\%$, $2.3\%$, and $2.5\%$ for 2016, 2017 and 2018, respectively~\cite{CMS-PAS-LUM-17-001,CMS-PAS-LUM-17-004,CMS-PAS-LUM-18-002}.
+
+  \item {\bf Pileup}: An uncertainty is estimated by varying the minimum bias cross section of pp collisions at 13 TeV.
+
+  \item {\bf Theoretical uncertainties}: For signal only the uncertainties on the rate and acceptance of the signal are derived from the variation of the QCD scale, the parton distribution functions (PDFs) and \alpS.
+  The PDF and \alpS uncertainties for the \MADGRAPH signal samples are estimated from the standard deviation of the weights from the pdf errorsets provided in the NNPDF3.1 parton distribution set.
+  The procedure for estimating the uncertainties associated with the PDF follows the recommendations issued by the PDF4LHC group~\cite{PDF4LHC}.
+
+  \item {\bf Lepton trigger and selection}: Discrepancies in the lepton reconstruction, identification, and isolation efficiencies between data and simulation are corrected by applying a scale factor to all the simulated samples.
+The scale factors, which depend on the \pt and $\eta$, are varied by $\pm \sigma$ and the change in the yield in the signal region is taken as the systematic. 
+
+  \item {\bf Lepton momentum scale and resolution}: The lepton momentum scale uncertainty is computed by varying the momentum of the leptons by their uncertainties.
+
+For muons with $\pt<\SI{200}{\GeV}$, the Rochester corrections were applied to the muon momentum,
+which removes bias from detector misalignment or magnetic fields~\cite{muonrochcor}.
+Systematic uncertainties considered are follows; root-mean-squared (RMS) of pre-generated error sets, difference between results without $Z$ momentum reweighting and variation of profile and fitting mass window,
+For muons with $\pt\ge\SI{200}{\GeV}$, generalized--endpoint (GE) method~\cite{muonGEmethod} were applied,
+and the uncertainties on the muon curvature bias are taken from a gaussian distribution.
+
+For electrons, we used the MiniAOD V2 energy corrections~\cite{EGMsmearings}, and correspondsing uncertainties.
+
+  \item {\bf Jet energy scale and resolution}: 
+The versions of JEC and JER are summarized in Table~\ref{tab:JEC} and Table~\ref{tab:JER}
+ In order have the resolution in the simulation similar to that in the data the momentum of the jets is smeared as:
+   \begin{equation}
+     \pt \rightarrow  \mathrm{max} [0, p^{\mathrm{gen}}_{T} + c_{\pm 1 \sigma} \cdot (\pt = p^{\mathrm{gen}}_{T})]
+   \end{equation}
+in which $c_{\pm 1 \sigma}$ are the data/MC scale factors, which are shifted by $\pm \sigma$. 
+
+This results in a systematic uncertainty of less than $1\%$ for all masses.
+
+  \item {\bf MC statistics}:
+For each simulated sample, we vary each distribution by $\pm 1 \sigma$ of the statistical uncertainty (based on the square root of the sum of the squared weights) and apply a log-normal normalization uncertatinty equal to the relative size of the effect.
+
+  \item {\bf LSF scale factor}:
+To determine the scale factor we measure LSF$_3$ for in semi-leptonic ttbar events.
+We employ the tag-and-probe method to select for these events where our tag is
+the hadronically decaying top jet and our probe for LSF$_3$ is the
+semi-leptonically decaying top jet on the other side of the event. Our tag
+selection requires the hadronic jet to have a transverse momentum greater than
+450 GeV as well as a soft drop
+mass window around the top mass ($105 < m_{SD} < 220$ GeV). Additionally, we
+use the tightest 2016 working point for the N-subjettiness ratio variable, requiring
+$\tau_{32} < 0.4$ to select for the three-prongness of the hadronically decaying
+top. To further define a hadronically decaying top we use the
+loose 2016 working point for a subjet b-tag discriminant, b-tag$_csv > 0.5426$. We
+then require $d\phi(\text{Lep Jet}, \text{Hadronic Jet}) > 2$. Since there is a neutrino in
+the final of the semi-leptonic top jet we make a MET selection requiring more
+than 100 GeV of MET in the event.
+
+{\color{red} Currently being worked on and presented in JMAR} 
+
+  \item {Background estimation uncertainty}:
+Described in Section~\ref{sec:ttbarBkgd}, but currently a {\color{red} $20\%$} uncertainty is applied.
+
+\end{itemize}
+
+
+{\color{red} TO DO: Uncertainty table}
+
+\begin{table}[htbp]
+  \caption{
+    The JEC for each year.
+  }
+  \centering
+  \label{tab:systematics}
+  \begin{tabular}{ c l l }
+\hline
+\hline
+  \end{tabular}
+\end{table}
+
