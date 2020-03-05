@@ -1,6 +1,7 @@
-% hunsrt: adds eprint field (www-admin@xxx.lanl.gov)
+ % hunsrt: adds eprint field (www-admin@xxx.lanl.gov)
 % an extension of:
 % BibTeX standard bibliography style `unsrt'
+% with added trncating
 % version 0.99a for BibTeX versions 0.99a or later, LaTeX version 2.09.
 % Copyright (C) 1985, all rights reserved.
 % Copying of this file is authorized only if either
@@ -193,20 +194,29 @@ FUNCTION {format.names}
     { namesleft #0 > }
     { s nameptr "{ff~}{vv~}{ll}{, jj}" format.name$ 't :=
       nameptr #1 >
-	{ namesleft #1 >
-	    { ", " * t * }
-	    { numnames #2 >
-		{ "," * }
-		'skip$
-	      if$
-	      t "others" =
-		{ " et~al." * }
-		{ " and " * t * }
-	      if$
-	    }
-	  if$
-	}
-	't
+         {
+          nameptr #3
+          #1 + =
+          numnames #5
+          > and
+            { "others" 't :=
+              #1 'namesleft := }
+            'skip$
+          if$
+          namesleft #1 >
+            { ", " * t * }
+            { numnames #2 >
+                { "," * }
+                'skip$
+              if$
+              t "others" =
+                { " et~al." * }
+                { " and " * t * }
+              if$
+            }
+          if$
+        }
+        't
       if$
       nameptr #1 + 'nameptr :=
       namesleft #1 - 'namesleft :=

@@ -21,6 +21,7 @@
 \usepackage{hyperref} % Add clickable links to other parts of the document
 \usepackage[noabbrev]{cleveref} % Automatically determine \cref type
 \usepackage{subcaption} % Allows subfigures
+\usepackage{todonotes}
 
 % Configure the siunitx package
 \sisetup{
@@ -42,7 +43,7 @@
 \input{macros/units.tex}
 \input{macros/values.tex}
 \input{macros/variables.tex}
-\input{macros/from_ptr_definitions.tex}
+%\input{macros/from_ptr_definitions.tex}
 
 % Custom LaTeX variables
 \input{variables}
@@ -59,6 +60,7 @@
     chapters/BoostedPhysics,
     chapters/experiment,
     chapters/event_selection,
+    chapters/object_id_reco_corr,
     chapters/conclusion,
     chapters/app_glossary,
     chapters/Systematic_Uncertainties,
@@ -86,6 +88,7 @@
 \include{chapters/experiment}
 \include{chapters/BoostedPhysics}
 %ANA chapters
+\include{chapters/object_id_reco_corr}
 \include{chapters/event_selection}
 \include{chapters/Background_Estimation}
 \include{chapters/Systematic_Uncertainties}
