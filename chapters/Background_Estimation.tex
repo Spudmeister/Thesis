@@ -1,436 +1,325 @@
-\chapter{Background Estimation}
+\chapter{Background Estimations and Uncertainties}
 \label{ch:bg_estim}
+A discussion of the dominant backgrounds, their uncertainties and their estimations are inseparably linked to the complicated statistical calculations performed to estimate a limit on the cross-section of a possible \WR. This chapter serves as the first of two discussing the approaches of this analysis therein. Here, dominant backgrounds and their dominant uncertainties are discussed in detail and the remaining uncertainties briefly explained. Section~\ref{ch:limit_setting} delves into statistical techniques and calculations used in this chapter and presents the resulting limit 
 
-As \ttbar and $\PZ$+Jets have the same final state as the signal, they are the main sources of background in both the resolved and boosted regions of this analysis.
-A schematic diagram representing the control regions used to estimate the \ttbar and $\PZ$+Jets backgrounds and the signal region is shown in Fig~\ref{fig:BkgdSchem}.
-The contributions from other processes are negligible and have been estimated by counting the number of events in the simulated samples in the signal region.
+\section{Primary Background Estimations}
+Both \ttbar and \Zg can have the same final state as the signal and they are the main sources of background in both the resolved and boosted regions of this analysis. There are several other backgrounds also accounted for in this analysis, however, they occur at a low enough rate to both have a much smaller overall contribution and prove to difficult to directly study. These backgrounds are estimated directly from Monte-Carlo simulations. In order to better-estimate the two dominant backgrounds, \ttbar and \Z+Jets, two control regions defined in Chapter~\ref{ch:strategy} are used. As each year's Monte-Carlo has its own corrections and is partially correlated with the other years, each year's distribution for each background is handled separately for the purposes of limit-setting. However, where possible each year is shown stacked with the others for simplicity.
 
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[width=1.0\textwidth]{figures/Schem.pdf}
-  \topcaption{
-    A schematic diagram of the analysis regions.
-  }
-  \label{fig:BkgdSchem}
-\end{figure}
-
-\subsection{Z+Jets background estimation}
-MC simulation was used to estimate the background from high mass DY lepton pairs produced in association with additional jets.
-The DY contribution normalization in simulation was then corrected to match the events in data by means of a SF measured in the low $m_{\ell\ell}$ CR.
-The contribution from other backgrounds in this CR is taken from simulation and subtracted from the data to produce a pure DY sample.
-This SF takes into account residual mis-modeling between data and simulation including the signal region requirements on the jets.
-
-We calculated preliminary normalization SFs in a region similar to our low $m_{\ell\ell}$ control region, to test our procedure. The region used is defined by:
-
-\begin{itemize}
-  \item Exactly two same-flavor leptons, without additional tight lepton
-  \item \pt of the leading (subleading) lepton $>60(53)\GeV$
-  \item The invariant mass of the dilepton, $\abs{m(\ell\ell) - m(\PZ)} < 10\GeV$, where $m(\PZ)=91.1876\GeV$
-\end{itemize}
-
-The dilepton mass distribution in this region is shown in Fig~\ref{fig:BkgdZmllBefore}, and the obtained normalization scale factors are shown in Tab.~\ref{tab:BkgdZNormSF}.
-
-
+\subsection{Drell-Yan}
+To estimate the background from high-mass or high-\pt Drell-Yan lepton pairs produced in association with additional jets, a leading order (LO) MC simulation is used. While this simulation produced ample events to make a statistically precise estimate of the Drell-Yan background in our signal region, there are a few ways in which the simulation has been observed to be inconsistent with data (and in the control region of this analysis simulation additionally deviates after initial correction). The spectrum of all Monte-Carlo events in the Drell-Yan control region (described in Section~\ref{sec:DYSB}) is shown in Fig.~\ref{fig:DYCR_preAll}.
+In the Drell-Yan control region, the simulated \pt of the \Z boson deviates from data. To correct this issue, a \pt correction was derived by reweighting Drell-Yan simulation based on next-to-leading-order (NLO) Drell-Yan simulation. While it is certain that the NLO simulation better agrees with measurements in the Drell-Yan control region, it is assumed that this relationship holds true in the signal region as well. These corrections are shown in Fig.~\ref{fig:BkgdZptReweight}.
 \begin{figure}[htbp]
   \centering
 
-  \includegraphics[width=0.45\textwidth]{figures/2016/BeforeNormSF_ZCand_Mass_HNWR_SingleElectron_OnZ.pdf}
+  \includegraphics[width=0.45\textwidth]{figures/2016/Reweights_2016.pdf}
   \hspace{0.01\textwidth}
-  \includegraphics[width=0.45\textwidth]{figures/2016/BeforeNormSF_ZCand_Mass_HNWR_SingleMuon_OnZ.pdf}
-  \vspace{0.01\textwidth}
 
-  \includegraphics[width=0.45\textwidth]{figures/2017/BeforeNormSF_ZCand_Mass_HNWR_SingleElectron_OnZ.pdf}
+  \includegraphics[width=0.45\textwidth]{figures/2017/Reweights_2017.pdf}
   \hspace{0.01\textwidth}
-  \includegraphics[width=0.45\textwidth]{figures/2017/BeforeNormSF_ZCand_Mass_HNWR_SingleMuon_OnZ.pdf}
-  \vspace{0.01\textwidth}
 
-  \includegraphics[width=0.45\textwidth]{figures/2018/BeforeNormSF_ZCand_Mass_HNWR_SingleElectron_OnZ.pdf}
-  \hspace{0.01\textwidth}
-  \includegraphics[width=0.45\textwidth]{figures/2018/BeforeNormSF_ZCand_Mass_HNWR_SingleMuon_OnZ.pdf}
-
+  \includegraphics[width=0.45\textwidth]{figures/2018/Reweights_2018.pdf}
 
   \topcaption{
-    The dilepton mass distribution in the $\PZ$+Jets dominant control region, before applying the normalization scale factors.
-    Results for dielectron (dimuon) channel is shown on the left (right), for 2016 (top), 2017 (middle) and 2018 (bottom).
-  }
-  \label{fig:BkgdZmllBefore}
-\end{figure}
-
-\begin{table}[htbp]
-  \topcaption{
-    The normalization scale factor of the $\PZ$+Jets MC samples.
-  }
-  \centering
-  \label{tab:BkgdZNormSF}
-  \begin{tabular}{ccc}
-\hline
-Year & $\Pe\Pe$ & $\mu\mu$ \\
-\hline
-2016 & $0.975 \pm 0.007\stat \pm 0.020\thy$ & $0.942 \pm 0.006\stat \pm 0.019\thy$ \\
-2017 & $0.970 \pm 0.006\stat \pm 0.020\thy$ & $0.980 \pm 0.005\stat \pm 0.020\thy$ \\
-2018 & $1.040 \pm 0.005\stat \pm 0.022\thy$ & $1.050 \pm 0.004\stat \pm 0.022\thy$ \\
-\hline
-  \end{tabular}
-\end{table}
-
-
-With this normalization scale factor applied, the dilepton \pt distribution is shown in Fig~\ref{fig:BkgdZptllAfter}.
-Due to the poor agreement of the $\PZ$-\pt between the data and MC,
-we reweighted the shape of the dilepton \pt distribution.
-The reweighting function is shown in Fig.~\ref{fig:BkgdZptReweight}.
-A constant value is used after 500~\GeV, using the value from the previous bin.
-Figure~\ref{fig:BkgdZptLepPtBefore} and Figure~\ref{fig:BkgdZptLepPtAfter} shows the lepton \pt distributions before and after both corrections applied, respectively.
-
-\begin{figure}[htbp]
-  \centering
-
-  \includegraphics[width=0.45\textwidth]{figures/2016/AfterNormSF_ZCand_Pt_HNWR_SingleElectron_OnZ.pdf}
-  \hspace{0.01\textwidth}
-  \includegraphics[width=0.45\textwidth]{figures/2016/AfterNormSF_ZCand_Pt_HNWR_SingleMuon_OnZ.pdf}
-  \vspace{0.01\textwidth}
-
-  \includegraphics[width=0.45\textwidth]{figures/2017/AfterNormSF_ZCand_Pt_HNWR_SingleElectron_OnZ.pdf}
-  \hspace{0.01\textwidth}
-  \includegraphics[width=0.45\textwidth]{figures/2017/AfterNormSF_ZCand_Pt_HNWR_SingleMuon_OnZ.pdf}
-  \vspace{0.01\textwidth}
-  
-  \includegraphics[width=0.45\textwidth]{figures/2018/AfterNormSF_ZCand_Pt_HNWR_SingleElectron_OnZ.pdf}
-  \hspace{0.01\textwidth}
-  \includegraphics[width=0.45\textwidth]{figures/2018/AfterNormSF_ZCand_Pt_HNWR_SingleMuon_OnZ.pdf}
-
-  \topcaption{
-    The dilepton \pt distribution in the $\PZ$+Jets dominant control region, after applying the normalization scale factors.
-    Results for dielectron (dimuon) channel is shown on the left (right), for 2016 (top), 2017 (middle) and 2018 (bottom).
-  }
-  \label{fig:BkgdZptllAfter}
-\end{figure}
-
-\begin{figure}[htbp]
-  \centering
-
-  \includegraphics[width=0.45\textwidth]{figures/2016/Reweight.pdf}
-  \hspace{0.01\textwidth}
-
-  \includegraphics[width=0.45\textwidth]{figures/2017/Reweight.pdf}
-  \hspace{0.01\textwidth}
-
-  \includegraphics[width=0.45\textwidth]{figures/2018/Reweight.pdf}
-
-  \topcaption{
-    The dilepton \pt reweighting function, for 2016 (left), 2017 (middle) and 2018 (right).
+    The \Z-\pt-mass correction functions, for 2016 (upper), 2017 (middle) and 2018 (lower)~\cite{CMS-PAS-SMP-15-011}.
   }
   \label{fig:BkgdZptReweight}
 \end{figure}
 
-\begin{figure}[htbp]
-  \centering
+After these corrections an observed difference remains between the Drell-Yan and data in the Z-mass sideband in the resolved signal mass spectrum. The LO samples used in this analysis over-predict the data distribution noticeably. The difference between data and Monte-Carlo for both lepton flavors is shown in Fig.~\ref{fig:LO_Z_vs_data}. As LO and next-to-leading order (NLO) Monte-Carlo simulate a different number of partons, it is important to consider the NLO spectrum as well. The NLO and LO spectra (with and without Z-\pt reweighting) are shown in Fig.~\ref{fig:DYCR_NLOvLO}. The spectrum of the highest \pt jet in the selection region is shown alongside the signal mass spectrum. From the jet \pt distribution its clear that the LO jet distribution is consistently harder in the high \pt tail as might be expected. While there are differences between the shape of this difference between the two lepton flavor selections, these are assumed to be fluctuations. The correction is calculated combining the two flavors.
 
-  \includegraphics[width=0.45\textwidth]{figures/2016/AfterNormSF_Lepton_0_Pt_HNWR_SingleElectron_OnZ.pdf}
-  \hspace{0.01\textwidth}
-  \includegraphics[width=0.45\textwidth]{figures/2016/AfterNormSF_Lepton_0_Pt_HNWR_SingleMuon_OnZ.pdf}
-  \vspace{0.01\textwidth}
 
-  \includegraphics[width=0.45\textwidth]{figures/2017/AfterNormSF_Lepton_0_Pt_HNWR_SingleElectron_OnZ.pdf}
-  \hspace{0.01\textwidth}
-  \includegraphics[width=0.45\textwidth]{figures/2017/AfterNormSF_Lepton_0_Pt_HNWR_SingleMuon_OnZ.pdf}
-  \vspace{0.01\textwidth}
+\begin{figure}[!tp]
 
-  \includegraphics[width=0.45\textwidth]{figures/2018/AfterNormSF_Lepton_0_Pt_HNWR_SingleElectron_OnZ.pdf}
-  \hspace{0.01\textwidth}
-  \includegraphics[width=0.45\textwidth]{figures/2018/AfterNormSF_Lepton_0_Pt_HNWR_SingleMuon_OnZ.pdf}
+  \includegraphics[width=\textwidth]{figures/DYCR_wrmass.pdf}
 
-  \topcaption{
-    The lepton \pt distributions in the $\PZ$+Jets dominant control region, after applying the normalization scale factors, but not the $\PZ$-$\pt$ reweighting..
-    Results for dielectron (dimuon) channel is shown on the left (right), for 2016 (top), 2017 (middle) and 2018 (bottom).
+  \caption[Drell-Yan Data vs Monte-Carlo]{
+    Data and Monte-Carlo in the Z-mass sideband are compared in the electron and muon flavors shown on the left and right, respectively. Data over Monte-Carlo is highlighted and shown in the bottom two plots.
   }
-  \label{fig:BkgdZptLepPtBefore}
+  \label{fig:LO_Z_vs_data}
 \end{figure}
 
-\begin{figure}[htbp]
-  \centering
+\begin{figure}[!tp]
 
-  \includegraphics[width=0.45\textwidth]{figures/2016/AfterNormSFAndZPtReweighting_Lepton_0_Pt_HNWR_SingleElectron_OnZ.pdf}
-  \hspace{0.01\textwidth}
-  \includegraphics[width=0.45\textwidth]{figures/2016/AfterNormSFAndZPtReweighting_Lepton_0_Pt_HNWR_SingleMuon_OnZ.pdf}
-  \vspace{0.01\textwidth}
+  \includegraphics[width=\textwidth]{figures/DYCR_NLOvLO.pdf}
 
-  \includegraphics[width=0.45\textwidth]{figures/2017/AfterNormSFAndZPtReweighting_Lepton_0_Pt_HNWR_SingleElectron_OnZ.pdf}
-  \hspace{0.01\textwidth}
-  \includegraphics[width=0.45\textwidth]{figures/2017/AfterNormSFAndZPtReweighting_Lepton_0_Pt_HNWR_SingleMuon_OnZ.pdf}
-  \vspace{0.01\textwidth}
-   
-  \includegraphics[width=0.45\textwidth]{figures/2018/AfterNormSFAndZPtReweighting_Lepton_0_Pt_HNWR_SingleElectron_OnZ.pdf}
-  \hspace{0.01\textwidth}
-  \includegraphics[width=0.45\textwidth]{figures/2018/AfterNormSFAndZPtReweighting_Lepton_0_Pt_HNWR_SingleMuon_OnZ.pdf}
-
-
-  \topcaption{
-    The lepton \pt distributions in the $\PZ$+Jets dominant control region, after applying the normalization scale factors and $\PZ$-$\pt$ reweighting.
-    Results for dielectron (dimuon) channel is shown on the left (right), for 2016 (top), 2017 (middle) and 2018 (bottom).
+  \caption[Drell-Yan LO versus NLO spectra]{
+    The spectra of simulated Drell-Yan are compared at LO with and without reweighting and NLO. The highest-\pt jet spectrum is shown on the left, and the signal mass is shown on the right.
   }
-  \label{fig:BkgdZptLepPtAfter}
+  \label{fig:DYCR_NLOvLO}
 \end{figure}
 
-The comparison between before and after applying $\PZ$-$\pt$ reweighting in the signal regions are shown in Figs.~\ref{fig:BkgdZptSRCompResolved}--\ref{fig:BkgdZptSRCompBoosted}.
-
-\begin{figure}[htbp]
-  \centering
-
-  \includegraphics[width=0.45\textwidth]{figures/2016/Resolved_SR_Electron_WRCand_Mass.pdf}
-  \hspace{0.01\textwidth}
-  \includegraphics[width=0.45\textwidth]{figures/2016/Resolved_SR_Muon_WRCand_Mass.pdf}
-  \vspace{0.01\textwidth}
-
-  \includegraphics[width=0.45\textwidth]{figures/2017/Resolved_SR_Electron_WRCand_Mass.pdf}
-  \hspace{0.01\textwidth}
-  \includegraphics[width=0.45\textwidth]{figures/2017/Resolved_SR_Muon_WRCand_Mass.pdf}
-  \vspace{0.01\textwidth}
-
-  \includegraphics[width=0.45\textwidth]{figures/2018/Resolved_SR_Electron_WRCand_Mass.pdf}
-  \hspace{0.01\textwidth}
-  \includegraphics[width=0.45\textwidth]{figures/2018/Resolved_SR_Muon_WRCand_Mass.pdf}
-
-  \topcaption{
-    The reconstructed \PWR mass distributions in the resolved signal region, before and after applying $\PZ$-$\pt$ reweighting.
-  }
-  \label{fig:BkgdZptSRCompResolved}
-\end{figure}
-
-\begin{figure}[htbp]
-  \centering
-
-  \includegraphics[width=0.45\textwidth]{figures/2016/Boosted_SR_Electron_WRCand_Mass.pdf}
-  \hspace{0.01\textwidth}
-  \includegraphics[width=0.45\textwidth]{figures/2016/Boosted_SR_Muon_WRCand_Mass.pdf}
-  \vspace{0.01\textwidth}
-
-  \includegraphics[width=0.45\textwidth]{figures/2017/Boosted_SR_Electron_WRCand_Mass.pdf}
-  \hspace{0.01\textwidth}
-  \includegraphics[width=0.45\textwidth]{figures/2017/Boosted_SR_Muon_WRCand_Mass.pdf}
-  \vspace{0.01\textwidth}
-
-  \includegraphics[width=0.45\textwidth]{figures/2018/Boosted_SR_Electron_WRCand_Mass.pdf}
-  \hspace{0.01\textwidth}
-  \includegraphics[width=0.45\textwidth]{figures/2018/Boosted_SR_Muon_WRCand_Mass.pdf}
-
-  \topcaption{
-    The reconstructed \PWR mass distributions in the boosted signal region, before and after applying $\PZ$-$\pt$ reweighting.
-  }
-  \label{fig:BkgdZptSRCompBoosted}
-\end{figure}
-
-
-
-\subsubsection{Resolved}
-\iffalse
-The invariant mass distributions in the resolved low $m_{ll}$ control region are shown in Figure~\ref{fig:ResZPeak} for all three years of data taking.
-
-\begin{figure}[h!]\begin{center}
-    \includegraphics[width=0.49\textwidth]{figures/2016/resolvedRECOmass_ZPeak.png}
-    \includegraphics[width=0.49\textwidth]{figures/2017/resolvedRECOmass_ZPeak.png}\\
-    \includegraphics[width=0.49\textwidth]{figures/2018/resolvedRECOmass_ZPeak.png}
-    \caption{The 4-object invariant mass distribution in the resolved low $m_{ll}$ control region in 2016 (top left), 2017 (top right), and 2018 (bottom).}
- \label{fig:ResZPeak}
- \end{center}
- \end{figure}
-\fi
-{\color{red} TO DO SF results for each year}
-
-\subsubsection{Boosted}
-\iffalse
-The invariant mass distributions in the boosted low $m_{ll}$ control region are shown in Figure~\ref{fig:ResZPeak} for all three years of data taking.
-
-\begin{figure}[h!]\begin{center}
-    \includegraphics[width=0.49\textwidth]{figures/2016/leadAK8JetMuonMass_noLSF.png}
-    \includegraphics[width=0.49\textwidth]{figures/2017/leadAK8JetMuonMass_noLSF.png}\\
-    \includegraphics[width=0.49\textwidth]{figures/2018/leadAK8JetMuonMass_noLSF.png}
-    \caption{The 2-object invariant mass distribution in the boosted low $m_{ll}$ control region in 2016 (top left), 2017 (top right), and 2018 (bottom).}
- \label{fig:BoostZPeak}
- \end{center}
- \end{figure}
-\fi
-{\color{red} TO DO SF results for each year}
-
-\subsection{ttbar+Jets background estimation}
-\label{sec:ttbarBkgd}
-The \ttbar background contribution is estimated from simulation while a correction factor is derived in the flavor sideband CR, which has the same kinematics as the \ttbar in the signal region.
-The contribution from other backgrounds in this CR is taken from simulation and subtracted from the data to produce a pure \ttbar sample.
-
-For this estimate, the assumption made on the conservation of the flavor in the decay is needed to ensure that there is no contamination from signal events.
-Thus, the decay of a real $\PWR$ boson at leading order cannot yield a $\Pe\mu$ final state and the flavor sideband is dominated by $\ttbar$ events.
-
-To calculate the number of events from $\ttbar$ in the dimuon signal region, for both the boosted and resolved analyses, we used the $\ttbar$ MC to find the SFs $R_{\Pe\mu/\mu\mu}$ between the flavor sideband and the signal regions.
-These SFs were evaluated from the ratio of the number of events in the final-state objects invariant mass distributions in the signal region over the invariant mass distribution in the flavor sideband.
-The number of events in the signal region is given by:
-
+We hypothesize that the discrepancy in \WR mass observed is due to QCD effects which are independent of the Drell-Yan invariant mass.
+A bin-by-bin correction factor ($\xi_{i}$) is calculated in this control region and applied to the LO Drell-Yan simulation in all regions. The correction factor is calculated in two steps, first the ratio of Drell-Yan in data and Monte-Carlo is calculated:
 \begin{equation}
-N_{\ttbar}(\text{signal region}) = N_{\ttbar}(\text{flavor sideband})\times R_{\Pe\mu/\ell\ell}
+    \xi_{i}
+    =
+    \frac{\mathrm{DY_{NLO}}}{\mathrm{DY_{LO}}}.
 \end{equation}
+This ratio is calculated fore each reconstructed \WR candidate mass bin, in each year, for the boosted and resolved Drell-Yan control regions. The muon and electron flavors, however, are combined, as the jet hardness simulated will be independent of lepton flavor. As other simulation, reconstruction and selection differences between the two lepton flavors may also occur, an additional uncertainty is added which is formed with the difference between the ratio if calculated with electron or muon events separately. These two corrections are then applied to the Drell-Yan in the signal region.
 
-Using the SFs we can account for the difference in efficiency and acceptance between electrons and muons in these final states.
+\todo{plot of the DY signal region}
 
-The ratios between the signal region and the $\Pe\mu$--sideband are obtained using \ttbar MC samples,
-which are shown in Figs.~\ref{fig:emuRatioResolved}--\ref{fig:emuRatioBoosted}.
-We fit the ratios with a contatant polynomial function, and the fit results are summarized in Table~\ref{tab:EMuRatioFit}.
-\textcolor{red}{A preliminary systematic uncertainty $20~\%$ is assigned, which is enough to cover the ratio in whole $m_{\PWR}$ range.}
+\subsection{ttbar+jets background estimation}
+\label{sec:ttbarBkgd}
 
-The $m(\PWR)$ distributions in the $\Pe\mu$--sideband are shown in Figs.~\ref{fig:emuDATAMCResolved}--\ref{fig:emuDATAMCBoosted}.
-\textcolor{red}{For 2018 data analysis, $\PW$+Jets MC is not yet processed, which have considerable contributions in the boosted sideband events.}.
+The \ttbar background contribution is estimated with Monte-Carlo with an additional normalization factor that is calculated by performing a simultaneous fit of constant scale applied on every bin, in all regions.
 
-The comparison between the MC and data--driven method are shown in Figs.~\ref{fig:emuMCEMuCompResolved}--\ref{fig:emuMCEMuCompBoosted}.
-
-\begin{figure}[htbp]
+%The \ttbar background contribution is estimated directly from data in the flavor sideband CR, which has the same kinematics as the \ttbar in the signal region.
+%The contribution from other backgrounds in this CR are taken from simulation and subtracted from the data to produce a pure \ttbar sample.
+%For this estimate, the assumption made on the conservation of the flavor in the decay is needed to ensure that there is no contamination from signal events.
+%Thus, the decay of a real $\PWR$ boson at leading order cannot yield an $\Pe\mu$ final state and the flavor sideband is dominated by $\ttbar$ events.
+%To calculate the number of events from \ttbar in the muon signal region, for both the boosted and resolved analyses, we used the \ttbar Monte-Carlo to find the SFs $R_{\Pe\mu/\mu\mu}$ between the flavor sideband and the signal regions.
+In each region, the normalization ($\Xi_{r}$) is calculated by subtracting the simulated \ttbar distribution from the data and compared with the \ttbar simulation alone. The simultaneous fit attempts to find the normalization $\Xi$ which best agrees with the measured ratios in each region. This is used to scale the \ttbar in all regions.
+\begin{equation}
+    \Xi_{r}
+    =
+    \frac{\mathrm{Data_{r}}-\mathrm{MC_{other,r}}}{\mathrm{MC_{\ttbar,r}}}.
+\end{equation}
+The normalization factors for \ttbar are shown in Table~\ref{tab:EMuRatioFit}.
+\begin{table}[htbp]
+  \caption{
+    The fitted rate parameter of \ttbar background.
+  }
   \centering
 
-  \includegraphics[width=0.45\textwidth]{figures/2016/Ratios_Resolved_WRCand_Mass_TTLX_powheg.pdf}
-  \vspace{0.01\textwidth}
 
-  \includegraphics[width=0.45\textwidth]{figures/2017/Ratios_Resolved_WRCand_Mass_TTLX_powheg.pdf}
-  \vspace{0.01\textwidth}
+  \begin{tabular}{cccc}
 
-  \includegraphics[width=0.45\textwidth]{figures/2018/Ratios_Resolved_WRCand_Mass_TTLX_powheg.pdf}
-
-  \topcaption{
-    The signal region to $\Pe\mu$-sideband ratio as a function of the mass of $\PWR$ in the resolved category, for 2016 (left), 2017 (middle) and 2018 (right).
-  }
-  \label{fig:emuRatioResolved}
-\end{figure}
-
-\begin{figure}[htbp]
-  \centering
-
-  \includegraphics[width=0.45\textwidth]{figures/2016/Ratios_Boosted_elFatJet_WRCand_Mass_TTLX_powheg.pdf}
-  \hspace{0.01\textwidth}
-  \includegraphics[width=0.45\textwidth]{figures/2016/Ratios_Boosted_muFatJet_WRCand_Mass_TTLX_powheg.pdf}
-  \vspace{0.01\textwidth}
-
-  \includegraphics[width=0.45\textwidth]{figures/2017/Ratios_Boosted_elFatJet_WRCand_Mass_TTLX_powheg.pdf}
-  \hspace{0.01\textwidth}
-  \includegraphics[width=0.45\textwidth]{figures/2017/Ratios_Boosted_muFatJet_WRCand_Mass_TTLX_powheg.pdf}
-  
- \includegraphics[width=0.45\textwidth]{figures/2018/Ratios_Boosted_elFatJet_WRCand_Mass_TTLX_powheg.pdf}
-  \hspace{0.01\textwidth}
-  \includegraphics[width=0.45\textwidth]{figures/2018/Ratios_Boosted_muFatJet_WRCand_Mass_TTLX_powheg.pdf}
-
-  \topcaption{
-    The signal region to $\Pe\mu$-sideband ratio as a function of the mass of $\PWR$ in the boosted category.
-    Results with the events containing $\Pe$--jet ($\mu$--jet) are on the left (right), for 2016 (top), 2017 (middle) and 2018 (bottom).
-  }
-  \label{fig:emuRatioBoosted}
-\end{figure}
-
-\begin{figure}[htbp]
-  \centering
-
-  \includegraphics[width=0.45\textwidth]{figures/2016/WRCand_Mass_HNWR_EMu_Resolved_SR.pdf}
-  \vspace{0.01\textwidth}
-
-  \includegraphics[width=0.45\textwidth]{figures/2017/WRCand_Mass_HNWR_EMu_Resolved_SR.pdf}
-  \vspace{0.01\textwidth}
-
-  \includegraphics[width=0.45\textwidth]{figures/2018/WRCand_Mass_HNWR_EMu_Resolved_SR.pdf}
-
-  \topcaption{
-    The reconstructed mass of $\PWR$ in the resolved signal region, for 2016 (left), 2017 (middle) and 2018 (right).
-  }
-  \label{fig:emuDATAMCResolved}
-\end{figure}
-
-
-\begin{table}[htb]
-  \centering
-  \topcaption{
-    The fit results of the $\Pe\mu$--ratios, with the statistical uncertainties.
-  }
-  \begin{tabular}{ccccc}
 \hline
-\multirow{2}{*}{Year} & \multicolumn{2}{c}{Resolved} & \multicolumn{2}{c}{Boosted} \\
-                      & $\Pe\Pe$ & $\mu\mu$ & $\Pe\Pe$ & $\mu\mu$ \\
+Year & Event type & Fitted with $ee$ SRs & Fitted with $\mu\mu$ SRs \\
 \hline
-2016                  & $0.438 \pm 0.001$ & $0.674 \pm 0.002$ & $0.808 \pm 0.006$ & $1.246 \pm 0.010$ \\
-2017                  & $0.441 \pm 0.004$ & $0.660 \pm 0.005$ & $0.835 \pm 0.018$ & $1.209 \pm 0.029$ \\
-2018                  & $0.436 \pm 0.001$ & $0.650 \pm 0.002$ & $0.827 \pm 0.008$ & $1.226 \pm 0.013$ \\
+
+\multirow{3}{*}{2016} & Resolved & $0.98 \pm 0.05$ & $0.95 \pm 0.05$ \\
+                      & Boosted with $e$-Jet & $0.86 \pm 0.12$ & $0.85 \pm 0.12$ \\
+                      & Boosted with $\mu$-Jet & $0.77 \pm 0.10$ & $0.76 \pm 0.09$ \\
+\multirow{3}{*}{2017} & Resolved & $1.05 \pm 0.05$ & $1.04 \pm 0.05$ \\
+                      & Boosted with $e$-Jet & $0.99 \pm 0.13$ & $0.94 \pm 0.13$ \\
+                      & Boosted with $\mu$-Jet & $0.92 \pm 0.11$ & $0.91 \pm 0.11$ \\
+\multirow{3}{*}{2018} & Resolved & $1.00 \pm 0.04$ & $1.00 \pm 0.04$ \\
+                      & Boosted with $e$-Jet & $0.89 \pm 0.10$ & $0.86 \pm 0.10$ \\
+                      & Boosted with $\mu$-Jet & $0.68 \pm 0.08$ & $0.78 \pm 0.08$ \\
+
 \hline
   \end{tabular}
-  \label{tab:EMuRatioFit}
+\label{tab:EMuRatioFit}
 \end{table}
 
 
-\begin{figure}[htbp]
+
+
+\section{Systematic Uncertainties}
+
+The systematic uncertainties in this analysis are meant to cover a wide range of discrepancies between data and simulation. This section divides the systematic uncertainties into categories. Each systematic uncertainty is ultimately propagated through to the final \WR mass distribution in various ways. As is discussed in Chapter~\ref{ch:limit_setting}, every systematic uncertainty is calculated in every signal region and sideband.
+
+\subsection{Background Driven Uncertainties}
+\subsubsection{\ttbar}
+The dominant uncertainty for the \ttbar background is on the normalization of \ttbar simulation. This normalization is calculated simultaneously in each region, with the flavor sideband having the strongest influence.
+
+\subsubsection{Drell-Yan}
+There are three dominant systematic uncertainties affecting the Drell-Yan simulations. The first is the uncertainty in the Z \pt-mass reweighting. This uncertainty varies, but is largest in the highest \pt and mass region at $30\%$. The second and third dominant uncertainties come from the residual data and simulation discrepancy noticed in the control region. As mentioned earlier, the uncertainty on the nominal value of the ratio is calculated per bin and includes all of the statistical and other systematic uncertainties. As there is some difference between the nominal value when calculated with the two lepton flavors separately, their difference is included as a systematic uncertainty. A diagram of these two uncertainties is shown in Fig.~\ref{fig:DYCR_ratio}
+
+\begin{figure}[!tp]
+
+  \includegraphics[width=\textwidth]{figures/DYCR_ratio.pdf}
+
+  \caption[Drell-Yan Shape Correction]{
+    The ratio of the Drell-Yan calculated in data and in Monte-Carlo in the Z-mass control region for 2018. The nominal value and its uncertainties are labelled.
+  }
+  \label{fig:DYCR_ratio}
+\end{figure}
+
+
+
+\subsection{Object Uncertainties}
+Systematic differences between simulation and data for the reconstructed jets, electrons, and muons in this analysis are only corrected up to a precision. Beyond this, systematic uncertainties remain for these objects. The event selection is re-run with a parameter (i.e. electron \pt) set at its upper and lower $1\sigma$ bounds. The final $M_{\ell\ell jj}/M_{\ell J}$ mass distribution is then used to see the effect of each parameter's uncertainty.
+
+\begin{itemize}
+ \item {\bf LSF scale factor}:
+ The most significant object uncertainty comes from the discrepancy between MC and data. Understanding this difference is complicated, as each background and signal produces the reconstructed \NR jet from different processes. This analysis artificially creates a 3-prong, signal-like jet by starting with a hadronically decaying, boosted W (2-prongs) and injecting either an electron or a muon into the event nearby it. This procedure is performed in data and \ttbar MC and the LSF distributions are compared to derive the scale factor for every year individually. The data and simulation distributions of LSF with an injected lepton are shown for both lepton flavors in Fig.~\ref{fig:LSFinjectedLepton}. The difference in efficiency between data and simulation on our LSF selection varies between 0.98 and 1.11 (between all years and lepton flavors) with an uncertainty between 5 and 9 \%. The full results are shown in Table \ref{tab:LSFSF_InjectedSamples}.
+ \begin{table}[htbp]
+  \caption{
+    The LSF scale factors for each year from the injected electron and muon samples.
+  }
   \centering
+  \label{tab:LSFSF_InjectedSamples}
+  \begin{tabular}{ccc}
 
-  \includegraphics[width=0.45\textwidth]{figures/2016/WRCand_Mass_HNWR_SingleMuon_EMu_Boosted_CR.pdf}
-  \hspace{0.01\textwidth}
-  \includegraphics[width=0.45\textwidth]{figures/2016/leadAK8JetElectronMass.png}
-  \vspace{0.01\textwidth}
+\hline
+Year & Injected $e$ & Injected $\mu$ \\
+\hline
+2016 & $1.04_{-0.08}^{+0.09}$ & $1.01_{-0.06}^{+0.06}$ \\
+2017 & $1.02_{-0.08}^{+0.08}$ & $0.98_{-0.07}^{+0.07}$ \\
+2018 & $1.11_{-0.07}^{+0.08}$ & $1.06_{-0.05}^{+0.06}$ \\
+\hline
+  \end{tabular}
+\end{table}
 
-  \includegraphics[width=0.45\textwidth]{figures/2017/WRCand_Mass_HNWR_SingleMuon_EMu_Boosted_CR.pdf}
-  \hspace{0.01\textwidth}
-  \includegraphics[width=0.45\textwidth]{figures/2017/leadAK8JetElectronMass.png}
+\begin{figure}[!tp]
+
+  \includegraphics[width=\textwidth]{figures/2018_LSF_Injected_Lepton.pdf}
+
+  \caption[LSF In Data and Simulation]{
+    LSF is shown for data and simulation in 2018. The \ttbar simulation is separated in to three categories dependent on how many of the decay-quarks are within the jet cone of 0.8. 
+  }
+  \label{fig:LSFinjectedLepton}
+\end{figure}
+
+\item {\bf Lepton momentum scale and resolution}: The lepton momentum scale uncertainty is computed by varying the momentum of the leptons by their uncertainties.
+
+Neither of the lepton momentum scale and resolution uncertainties are dominant in their respective channels. Each of these corrections apply to the lepton's momentum value, not the event weight itself. As such, a few percent change in their momenta is very unlikely to move the event between analysis bins let alone cause it to fail event requirements.
+
+For muons with $\pt<200\GeV$, the Rochester corrections were applied to the muon momentum,
+which removes bias from detector misalignment or magnetic fields~\cite{muonrochcor}.
+Systematic uncertainties considered are follows; root-mean-squared (RMS) of pre-generated error sets, difference between results without Z momentum reweighting and variation of profile and fitting mass window,
+For muons with $\pt\ge200\GeV$, generalized--endpoint (GE) method~\cite{MuonHighPtRef} was applied,
+and the uncertainties on the muon curvature bias are taken from a gaussian distribution.
+Muon reconstruction and momentum scale give 0.4--1.0 (0--0.4)~\% and 0.4--2.4 (0.6--3.6)~\% uncertainties in the background estimation in the resolved (boosted) region.
+
+For electrons, we used the MiniAOD V2 energy corrections~\cite{EGMsmearings}, and corresponding uncertainties.
+Electron reconstruction~\cite{ELERECOSF}, energy resolution, and energy scale~\cite{EGMsmearings} give 1.0--1.6 (0--0.5)~\%, $<0.1$ ($<0.1$)~\%, and 0.5--1.8 (0.5--2.6)~\% uncertainties in the background estimation in the resolved (boosted) region.
+ \item {\bf Lepton trigger and selection}: Discrepancies in the lepton reconstruction, identification, and isolation efficiencies between data and simulation are corrected by applying a scale factor to all the simulated samples. This is explained in Section~\ref{sec:Reconstruction}. For the modified loose electron ID, the discrepancy between data and simulation is calculated as part of our LSF SF.
+The scale factors, which depend on the \pt and $\eta$, are varied by $\pm \sigma$ and the change in the yield in the signal region is taken as the systematic. 
+Electron identification~\cite{HEEPIDSF,HEEPIDSF2018Prompt} and trigger~\cite{EGammaHLTSFTwiki} give 3.1--3.3 (1.9--2.6)~\% and 0--0.1 (0.2--0.4)~\% uncertainties in the background estimation in the resolved (boosted) region.
+Muon identification, isolation and trigger give 0.2--1.2 (0.3--1.4)~\%, 0.1--0.2 (0--0.1)~\%, and 0.1--0.2 (0.6--1.0)~\% uncertainties in the background estimation in the resolved (boosted) region across all regions/years.
+
+
+  \item {\bf Jet energy scale and resolution}: 
+  Like with momentum corrections for leptons, the jet energy scale and resolution apply to the overall jet energy. This does not significantly change the four or two-object mass spectrum.
+The versions of JEC and JER are summarized in Table~\ref{tab:JEC} and Table~\ref{tab:JER}
+ In order have the resolution in the simulation similar to that in the data the momentum of the jets is smeared as:
+   \begin{equation}
+     \pt \rightarrow  \mathrm{max} [0, p^{\mathrm{gen}}_{T} + c_{\pm 1 \sigma} \cdot (\pt = p^{\mathrm{gen}}_{T})]
+   \end{equation}
+in which $c_{\pm 1 \sigma}$ are the data/MC scale factors, which are shifted by $\pm \sigma$. 
+
+This results in a systematic uncertainty of less than $1\%$ for all masses.
+
+ 
+\end{itemize}
+
+\subsection{Event Uncertainties}
+There are several uncertainties related to event weights applied to background and signal simulations. Their effects are generally small, and vary in application depending on the uncertainty.
+\begin{itemize}
+
+  \item {\bf Integrated luminosity}: The systematic uncertainty on the integrated luminosity are $2.5\%$, $2.3\%$, and $2.5\%$ for 2016, 2017 and 2018, respectively~\cite{CMS-PAS-LUM-17-001,CMS-PAS-LUM-17-004,CMS-PAS-LUM-18-002}. The integrated luminosity is used to scale background and signal simulations for them to be compared to data. Each of the major backgrounds has additional scaling to data in the simultaneous fit making this uncertainty effectively irrelevant for backgrounds. Signal simulations, however, are scaled by luminosity and otherwise uncorrected to create the two-dimensional \WRNR mass limits. It remains, however, not a dominant uncertainty in those limits.
+
+  \item {\bf Pileup}: The number of collision vertices in every event varies. This distribution is modeled in simulation and compared with data for each year. An uncertainty is estimated by varying the minimum bias cross section of pp collisions at 13 TeV. This uncertainty is not very significant.
+
+  \item {\bf Theoretical uncertainties}: For signal simulation, only the uncertainties on the rate and acceptance of the signal are derived from the variation of the QCD scale, the parton distribution functions (PDFs) and \alpS.
+  The PDF and \alpS uncertainties for the \MADGRAPH signal samples are estimated from the standard deviation of the weights from the PDF errorsets provided in the NNPDF3.1 parton distribution set.
+  The procedure for estimating the uncertainties associated with the PDF follows the recommendations issued by the PDF4LHC group~\cite{PDF4LHC}.
   
-  \includegraphics[width=0.45\textwidth]{figures/2018/WRCand_Mass_HNWR_SingleMuon_EMu_Boosted_CR.pdf}
+  \item {\bf Pre-firing probabilities}:
+Followed by the recommendation pre-firing study group in CMS, a 20~\% systematic uncertainty is applied in addition to the statistical uncertainty on the pre-firing scale factor.
+
+\end{itemize}
+
+\subsection{Multi-Year Correlations}
+For this analysis, the three main data taking years of Run II are analyzed. Each year changes in the detector and \LHC conditions occurred, some subtle, and others less so (like the HEM failure in 2018). Collision events between years are generally considered uncorrelated. However, as a conservative default, systematic uncertainties considered in this analysis correlate between years, and the statistical uncertainty of events in different years are completely uncorrelated. A few systematic uncertainties are uncorrelated. A full list of all the uncertainties and the range of their effects on event yields in different signal regions and years is shown in Table~\ref{tab:systUnc}
+
+
+\section{Model Inputs}
+Having covered the background estimations and the diverse uncertainties in the analysis, all of the distributions used as inputs to the fitting and hypothesis testing process are shown here. The flavor sideband, Drell-Yan, and lepton-flavor signal regions are shown with each of the years shown independently.
+
+\begin{figure}[htbp]
+  \centering
+
+  \includegraphics[width=0.45\textwidth]{figures/2016/AfterZPtReweight_AfterDYNorm_AfterDYReshape_WRCand_Mass_HNWR_SingleElectron_Resolved_DYCR.pdf}
   \hspace{0.01\textwidth}
-  \includegraphics[width=0.45\textwidth]{figures/2018/leadAK8JetElectronMass.png}
+  \includegraphics[width=0.45\textwidth]{figures/2016/AfterZPtReweight_AfterDYNorm_AfterDYReshape_WRCand_Mass_HNWR_SingleMuon_Resolved_DYCR.pdf}
+  \vspace{0.01\textwidth}
+
+  \includegraphics[width=0.45\textwidth]{figures/2017/AfterZPtReweight_AfterDYNorm_AfterDYReshape_WRCand_Mass_HNWR_SingleElectron_Resolved_DYCR.pdf}
+  \hspace{0.01\textwidth}
+  \includegraphics[width=0.45\textwidth]{figures/2017/AfterZPtReweight_AfterDYNorm_AfterDYReshape_WRCand_Mass_HNWR_SingleMuon_Resolved_DYCR.pdf}
+  \vspace{0.01\textwidth}
+
+  \includegraphics[width=0.45\textwidth]{figures/2018/AfterZPtReweight_AfterDYNorm_AfterDYReshape_WRCand_Mass_HNWR_SingleElectron_Resolved_DYCR.pdf}
+  \hspace{0.01\textwidth}
+  \includegraphics[width=0.45\textwidth]{figures/2018/AfterZPtReweight_AfterDYNorm_AfterDYReshape_WRCand_Mass_HNWR_SingleMuon_Resolved_DYCR.pdf}
 
 
   \topcaption{
-    The reconstructed mass of $\PWR$ in the boosted signal region.
-    Results with the events containing $\Pe$--jet ($\mu$--jet) are on the left (right), for 2016 (top), 2017 (middle) and 2018 (bottom).
+    The $m(\ell \ell \jet \jet)$ in the low $m_{\ell\ell}$ Resolved control regions, after applying the DY ratio.
+    Results for dielectron (dimuon) channel is shown on the left (right), for 2016 (upper), 2017 (middle) and 2018 (lower).
   }
-  \label{fig:emuDATAMCBoosted}
+  \label{fig:AfterZPtReweight_AfterDYNorm_AfterDYReshape_WRCand_Mass_Resolved_DYCR}
 \end{figure}
 
 \begin{figure}[htbp]
   \centering
 
-  \includegraphics[width=0.45\textwidth]{figures/2016/Resolved_WRCand_Mass_HNWR_SingleElectron_Resolved_SR_TTLX_powheg.pdf}
+  \includegraphics[width=0.45\textwidth]{figures/2016/AfterZPtReweight_AfterDYNorm_AfterDYReshape_WRCand_Mass_HNWR_SingleElectron_Boosted_DYCR.pdf}
   \hspace{0.01\textwidth}
-  \includegraphics[width=0.45\textwidth]{figures/2016/Resolved_WRCand_Mass_HNWR_SingleMuon_Resolved_SR_TTLX_powheg.pdf}
+  \includegraphics[width=0.45\textwidth]{figures/2016/AfterZPtReweight_AfterDYNorm_AfterDYReshape_WRCand_Mass_HNWR_SingleMuon_Boosted_DYCR.pdf}
   \vspace{0.01\textwidth}
 
-  \includegraphics[width=0.45\textwidth]{figures/2017/Resolved_WRCand_Mass_HNWR_SingleMuon_Resolved_SR_TTLX_powheg.pdf}
+  \includegraphics[width=0.45\textwidth]{figures/2017/AfterZPtReweight_AfterDYNorm_AfterDYReshape_WRCand_Mass_HNWR_SingleElectron_Boosted_DYCR.pdf}
   \hspace{0.01\textwidth}
-  \includegraphics[width=0.45\textwidth]{figures/2017/Resolved_WRCand_Mass_HNWR_SingleMuon_Resolved_SR_TTLX_powheg.pdf}
+  \includegraphics[width=0.45\textwidth]{figures/2017/AfterZPtReweight_AfterDYNorm_AfterDYReshape_WRCand_Mass_HNWR_SingleMuon_Boosted_DYCR.pdf}
+  \vspace{0.01\textwidth}
+
+  \includegraphics[width=0.45\textwidth]{figures/2018/AfterZPtReweight_AfterDYNorm_AfterDYReshape_WRCand_Mass_HNWR_SingleElectron_Boosted_DYCR.pdf}
+  \hspace{0.01\textwidth}
+  \includegraphics[width=0.45\textwidth]{figures/2018/AfterZPtReweight_AfterDYNorm_AfterDYReshape_WRCand_Mass_HNWR_SingleMuon_Boosted_DYCR.pdf}
+
+
+  \topcaption{
+    The $m(\ell \Jet)$ of dilepton in the low $m_{\ell\ell}$ boosted control regions, after applying the DY ratio.
+    Results for dielectron (dimuon) channel is shown on the left (right), for 2016 (upper), 2017 (middle) and 2018 (lower).
+  }
+  \label{fig:AfterZPtReweight_AfterDYNorm_AfterDYReshape_WRCand_Mass_Boosted_DYCR}
+\end{figure}
+
+
+
+
+\begin{table}[htbp]%
+  \centering
+ 
   
-  \includegraphics[width=0.45\textwidth]{figures/2018/Resolved_WRCand_Mass_HNWR_SingleMuon_Resolved_SR_TTLX_powheg.pdf}
-  \hspace{0.01\textwidth}
-  \includegraphics[width=0.45\textwidth]{figures/2018/Resolved_WRCand_Mass_HNWR_SingleMuon_Resolved_SR_TTLX_powheg.pdf}
 
+\resizebox{\textwidth}{!}{%
+  \begin{tabular}{lcccccc}
+\hline
+\multirow{2}{*}{Source} & \multirow{2}{*}{Bkgd./Signal process} &\multirow{2}{*}{Year-to-year treatment} & $ee$ bkgd. & $ee$ signal & $\mu\mu$ bkgd. & $\mu\mu$ signal \\
+                        &                                       &     &  (\%)           & (\%)            & (\%)           & (\%) \\
+\hline
 
-  \topcaption{
-    The \ttbar contribution to the reconstructed mass of $\PWR$ in the resolved signal region.
-    Result from MC (Data-driven) are drawn in the black marker (orange histogram).
-    Results for dielectron (dimuon) channel is shown on the left (right), for 2016 (top), 2017 (middle) and 2018 (bottom).
+Integrated luminosity & All bkgd./Signal & Uncorrelated & 2.3--2.5 (2.3--2.5) & 2.3--2.5 (2.3--2.5) & 2.3--2.5 (2.3--2.5) & 2.3--2.5 (2.3--2.5) \\
+Jet energy resolution & All bkgd./Signal & Uncorrelated & 0.5--1.4 (0.7--2.0) & 0--0.9 (0--0.6) & 0.2--1.2 (0.2--1.2) & 0--0.7 (0--1.0) \\
+Jet energy scale & All bkgd./Signal & Correlated & 1.9--4.2 (0.9--2.0) & 0--0.4 (0--0.3) & 2.1--3.4 (0.6--1.0) & 0--0.1 (0--0.4) \\
+Muon reconstruction & All bkgd./Signal & Correlated & --- & --- & 0.4--1.0 (0.3--0.8) & 5.8--36.8 (5.9--30.4) \\
+Muon momentum scale & All bkgd./Signal & Correlated & --- & --- & 0.4--2.5 (0.5--3.6) & 0.1--0.2 (0.1--0.6) \\
+Muon identification & All bkgd./Signal & Correlated & --- & --- & 0.2--1.2 (0.1--0.6) & 0.2--1.1 (0.1--0.5) \\
+Muon isolation & All bkgd./Signal & Correlated & --- & --- & 0.1--0.2 (0--0.1) & 0.1--0.2 (0--0.1) \\
+Muon trigger & All bkgd./Signal & Uncorrelated & --- & --- & 0.1--0.2 (0.1--0.3) & 0.6--1.5 (0.5--1.3) \\
+Electron reconstruction & All bkgd./Signal & Correlated & 1.0--1.6 (0.5--0.8) & 0.8--1.4 (0.4--0.8) & --- & --- \\
+Electron energy resolution & All bkgd./Signal & Correlated & $<0.1$ ($<0.1$) & $<0.1$ ($<0.1$) & --- & --- \\
+Electron energy scale & All bkgd./Signal & Correlated & 0.5--1.8 (0.5--2.3) & 0--0.3 (0--0.4) & --- & --- \\
+Electron identification & All bkgd./Signal & Correlated & 3.0--3.2 (1.8--1.9) & 4.1--4.4 (2.1--2.5) & --- & --- \\
+Electron trigger & All bkgd./Signal & Uncorrelated & 0--0.1 (0.2--0.4) & $<0.1$ (0.1--0.2) & --- & --- \\
+LSF scale factor & All bkgd./Signal & Uncorrelated & ---~(7.2--8.7) & ---~(7.2--8.7) & ---~(5.7--7.1) & ---~(5.7--7.1) \\
+Pileup modeling & All bkgd./Signal & Correlated & 0.2--1.1 (0.5--1.1) & 0.1--1.1 (0--2.2) & 0.3--0.5 (0.2--1.1) & 0.1--1.9 (0.1--2.4) \\
+Prefire reweighting & All bkgd./Signal & Correlated & 0--1.4 (0--1.1) & 0--0.9 (0--1.0) & 0--0.5 (0--0.4) & 0--0.5 (0--0.2) \\
+Z \pt & \ZgJ & Correlated & 2.6--3.3 (2.7--3.5)& --- & 2.7--3.1 (2.8--3.4)& --- \\
+DY reshape & \ZgJ & Uncorrelated & 3.9--4.6 (4.6--5.5)& --- & 4.0--4.6 (4.6--5.5)& --- \\
+PDF error & Signal & Correlated & --- & 3.7--10.4 (11.0--38.7) & --- & 4.7--10.7 (12.5--43.3) \\
+\alpS & Signal & Correlated & --- & 0--0.1 (0.1--0.9) & --- & 0--0.1 (0--1.1) \\
+renorm./factorization scales & Signal & Correlated & --- & 0--0.1 (0.3--2.3) & --- & 0--0.1 (2.1--2.9) \\
+\hline
+  \end{tabular}
   }
-  \label{fig:emuMCEMuCompResolved}
-\end{figure}
-
-\begin{figure}[htbp]
-  \centering
-
-  \includegraphics[width=0.45\textwidth]{figures/2016/Boosted_elFatJet_WRCand_Mass_HNWR_SingleElectron_Boosted_SR_TTLX_powheg.pdf}
-  \hspace{0.01\textwidth}
-  \includegraphics[width=0.45\textwidth]{figures/2016/Boosted_muFatJet_WRCand_Mass_HNWR_SingleMuon_Boosted_SR_TTLX_powheg.pdf}
-  \vspace{0.01\textwidth}
-
-  \includegraphics[width=0.45\textwidth]{figures/2017/Boosted_elFatJet_WRCand_Mass_HNWR_SingleElectron_Boosted_SR_TTLX_powheg.pdf}
-  \hspace{0.01\textwidth}
-  \includegraphics[width=0.45\textwidth]{figures/2017/Boosted_muFatJet_WRCand_Mass_HNWR_SingleMuon_Boosted_SR_TTLX_powheg.pdf}
-
-  \includegraphics[width=0.45\textwidth]{figures/2018/Boosted_elFatJet_WRCand_Mass_HNWR_SingleElectron_Boosted_SR_TTLX_powheg.pdf}
-  \hspace{0.01\textwidth}
-  \includegraphics[width=0.45\textwidth]{figures/2018/Boosted_muFatJet_WRCand_Mass_HNWR_SingleMuon_Boosted_SR_TTLX_powheg.pdf}
-
-  \topcaption{
-    The \ttbar contribution to the reconstructed mass of $\PWR$ in the boosted signal region.
-    Result from MC (Data-driven) are drawn in the black marker (orange histogram).
-    Results for dielectron (dimuon) channel is shown on the left (right), for 2016 (top), 2017 (middle) and 2018 (bottom).
+  \caption{
+Summary of the relative systematic uncertainties in signal and \ZgJ background.
+The uncertainties are given for the resolved (boosted) SR.
+The numbers for signal is obtained for $m_{\WR}=\SI{5}{TeV}$.
+The range given for each systematic uncertainty source covers the variation across the years.
   }
-  \label{fig:emuMCEMuCompBoosted}
-\end{figure}
+
+  \label{tab:systUnc}
+
+\end{table}%
 
 
-For the systematic uncertainty on the scale factors, a closure test is performed in the low invariant mass region for both analyses.
-The largest discrepancy between the background prediction and the data is used as a systematic uncertainty.
-{\color{red}TO DO evaluate uncertainties}
-
+%We assigned a systematic uncertainty of 20~\% (30~\%) is assigned for the resolved (boosted) signal region which covers the largest discrepancy in the low invariant mass control region (App.~\ref{appendix_EMuSyst}).

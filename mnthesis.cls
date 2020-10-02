@@ -85,22 +85,24 @@
 
 %\setlength{\oddsidemargin}{1.937cm}  % default -> 2.0 cm odd side
 %\setlength{\oddsidemargin}{0.55in} % final version to grad school
-\setlength{\oddsidemargin}{0.55in}
-\setlength{\evensidemargin}{0.1in} % default -> 3.4 cm even side
+\setlength{\oddsidemargin}{0.5in}
+\setlength{\evensidemargin}{0.0in} % default -> 3.4 cm even side
 %\setlength{\evensidemargin}{0.1in} % default -> 3.4 cm even side
 
 %\setlength{\topmargin}{0.75in}
 \setlength{\topmargin}{0.25in}
 %\setlength{\headheight}{0.0in}
-\setlength{\headheight}{0.4in}
+\setlength{\headheight}{0.25in}
 \setlength{\headsep}{0.1in}
 
 \setlength{\marginparsep}{0in}
 \setlength{\marginparwidth}{0in}
 
-\setlength{\textwidth}{5.75in}
+\setlength{\textwidth}{6.00in}
+%\setlength{\textwidth}{5.75in}
 %\setlength{\textheight}{8.25in}
-\setlength{\textheight}{7.85in}
+%\setlength{\textheight}{7.85in}
+\setlength{\textheight}{8.4in}
 
 \setlength{\footskip}{0.4in}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

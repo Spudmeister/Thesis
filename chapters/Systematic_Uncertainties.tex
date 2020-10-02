@@ -3,8 +3,8 @@
 
 \section{Sources of Uncertainty}
 
-The uncertainties we consider in our analysis for both signal and background are discussed in the following section in detail, 
-and the overall effect on the processes normalization and shapes is discussed in Table~\ref{tab:systematics}. {\color{red} TO DO: Table} 
+The uncertainties considered in this analysis for both signal and background are discussed in the following section in detail, 
+and the overall effect on the processes normalization and shapes is discussed in Table~\ref{tab:systematics}.
 
 The major experimental sources of uncertainties for simulated backgrounds and signals include:
 \begin{itemize}
@@ -13,7 +13,7 @@ The major experimental sources of uncertainties for simulated backgrounds and si
 
   \item {\bf Pileup}: An uncertainty is estimated by varying the minimum bias cross section of pp collisions at 13 TeV.
 
-  \item {\bf Theoretical uncertainties}: For signal only the uncertainties on the rate and acceptance of the signal are derived from the variation of the QCD scale, the parton distribution functions (PDFs) and \alpS.
+  \item {\bf Theoretical uncertainties}: For signal, only the uncertainties on the rate and acceptance of the signal are derived from the variation of the QCD scale, the parton distribution functions (PDFs) and \alpS.
   The PDF and \alpS uncertainties for the \MADGRAPH signal samples are estimated from the standard deviation of the weights from the pdf errorsets provided in the NNPDF3.1 parton distribution set.
   The procedure for estimating the uncertainties associated with the PDF follows the recommendations issued by the PDF4LHC group~\cite{PDF4LHC}.
 
@@ -23,12 +23,12 @@ The scale factors, which depend on the \pt and $\eta$, are varied by $\pm \sigma
   \item {\bf Lepton momentum scale and resolution}: The lepton momentum scale uncertainty is computed by varying the momentum of the leptons by their uncertainties.
 
 For muons with $\pt<\SI{200}{\GeV}$, the Rochester corrections were applied to the muon momentum,
-which removes bias from detector misalignment or magnetic fields~\cite{muonrochcor}.
-Systematic uncertainties considered are follows; root-mean-squared (RMS) of pre-generated error sets, difference between results without $Z$ momentum reweighting and variation of profile and fitting mass window,
-For muons with $\pt\ge\SI{200}{\GeV}$, generalized--endpoint (GE) method~\cite{muonGEmethod} were applied,
-and the uncertainties on the muon curvature bias are taken from a gaussian distribution.
+which removes bias from detector misalignment or magnetic fields~\cite{muonrochcorpaper}.
+Systematic uncertainties considered are follows; root-mean-squared (RMS) of pre-generated error sets, difference between results without $Z$ momentum re-weighting and variation of profile and fitting mass window,
+For muons with $\pt\ge\SI{200}{\GeV}$, generalized--endpoint (GE) method~\cite{muonGEmethodpaper} were applied,
+and the uncertainties on the muon curvature bias are taken from a Gaussian distribution.
 
-For electrons, we used the MiniAOD V2 energy corrections~\cite{EGMsmearings}, and correspondsing uncertainties.
+For electrons, the MiniAOD V2 energy corrections ~\cite{EGMsmearings} and corresponding uncertainties are used.
 
   \item {\bf Jet energy scale and resolution}: 
 The versions of JEC and JER are summarized in Table~\ref{tab:JEC} and Table~\ref{tab:JER}
@@ -41,35 +41,27 @@ in which $c_{\pm 1 \sigma}$ are the data/MC scale factors, which are shifted by 
 This results in a systematic uncertainty of less than $1\%$ for all masses.
 
   \item {\bf MC statistics}:
-For each simulated sample, we vary each distribution by $\pm 1 \sigma$ of the statistical uncertainty (based on the square root of the sum of the squared weights) and apply a log-normal normalization uncertatinty equal to the relative size of the effect.
+For each simulated sample,  each distribution is varied by $\pm 1 \sigma$ of the statistical uncertainty (based on the square root of the sum of the squared weights) and a log-normal normalization uncertainty is applied equal to the relative size of the effect.
 
   \item {\bf LSF scale factor}:
-To determine the scale factor we measure LSF$_3$ for in semi-leptonic ttbar events.
-We employ the tag-and-probe method to select for these events where our tag is
-the hadronically decaying top jet and our probe for LSF$_3$ is the
-semi-leptonically decaying top jet on the other side of the event. Our tag
-selection requires the hadronic jet to have a transverse momentum greater than
-450 GeV as well as a soft drop
-mass window around the top mass ($105 < m_{SD} < 220$ GeV). Additionally, we
-use the tightest 2016 working point for the N-subjettiness ratio variable, requiring
-$\tau_{32} < 0.4$ to select for the three-prongness of the hadronically decaying
-top. To further define a hadronically decaying top we use the
-loose 2016 working point for a subjet b-tag discriminant, b-tag$_csv > 0.5426$. We
-then require $d\phi(\text{Lep Jet}, \text{Hadronic Jet}) > 2$. Since there is a neutrino in
-the final of the semi-leptonic top jet we make a MET selection requiring more
-than 100 GeV of MET in the event.
+The difference in efficiency between data and MC on our LSF selection is taken into account with a dedicated scale factor.
+The measurement of this scale factor and the uncertainty on it are explained in section~\ref{sec:lsf_sys}.
 
-{\color{red} Currently being worked on and presented in JMAR} 
+{\color{red} Currently being worked on and presented in JMAR, but a preliminary SF of $0.87^{0.08}_{0.07}$ has been measured in 2016 data.}
+
+  \item {\bf Pre-firing probabilities}:
+Followed by the recommendation \footnote{\href{https://lathomas.web.cern.ch/lathomas/TSGStuff/L1Prefiring/PrefiringMaps\_2016and2017/}{https://lathomas.web.cern.ch/lathomas/TSGStuff/L1Prefiring/PrefiringMaps\_2016and2017/}}, a 20~\% systematic uncertainty is applied in addition to the statistcial uncertainty.
+
 
   \item {Background estimation uncertainty}:
-Described in Section~\ref{sec:ttbarBkgd}, but currently a {\color{red} $20\%$} uncertainty is applied.
+Described in Section~\ref{sec:ttbarBkgd}, a $20\%$ uncertainty is applied.
 
 \end{itemize}
 
 
 {\color{red} TO DO: Uncertainty table}
 
-\begin{table}[htbp]
+\begin{table}[tp]
   \caption{
     The JEC for each year.
   }
@@ -81,8 +73,26 @@ Described in Section~\ref{sec:ttbarBkgd}, but currently a {\color{red} $20\%$} u
   \end{tabular}
 \end{table}
 
+\subsection{LSF Systematic}
+\label{sec:lsf_sys}
+To determine the scale factor LSF$_3$ is measured for in semi-leptonic \ttbar events.
+The tag-and-probe method is employed to select for these events where the tag is
+the hadronically decaying top jet and the probe for LSF$_3$ is the
+semi-leptonically decaying top jet on the other side of the event. The tag
+selection requires the hadronic jet to have a transverse momentum greater than
+450 GeV as well as a soft drop
+mass window around the top mass ($105 < m_{SD} < 220$ GeV). Additionally, the tightest 2016 working point for the N-subjettiness ratio variable is used, requiring
+$\tau_{32} < 0.4$ to select for the three-prongness of the hadronically decaying
+top. To further define a hadronically decaying top the
+loose 2016 working point for a subjet b-tag discriminant is used, b-tag$_csv > 0.5426$. Then $d\phi(\text{Lep Jet} \text{Hadronic Jet}) > 2$ is required. Since there is a neutrino in
+the final state of the semi-leptonic top jet a MET selection, requiring more
+than 100 GeV of MET in the event, is used.
+
+{\color{red} Currently being worked on and presented in JMAR} 
+
 \section{Multi-Year Combination}
 For this analysis, the three main data taking years of Run II are analyzed. Each year changes in the detector and \LHC conditions occurred, some subtle, and others less so (like the HEM failure in 2018). Collision events between years are generally considered uncorrelated. Most systematic uncertainties considered in this analysis do not correlate between years, and the statistical uncertainty of events in different years are, likewise, completely uncorrelated.
 
 \subsection{Systematic Uncertainty Correlations}
+\label{sec:multiyearsys}
 Some sources of uncertainty considered in this analysis are considered to be correlated between years. Each 

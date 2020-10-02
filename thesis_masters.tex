@@ -22,6 +22,8 @@
 \usepackage[noabbrev]{cleveref} % Automatically determine \cref type
 \usepackage{subcaption} % Allows subfigures
 \usepackage{todonotes}
+\usepackage{rotating}
+\usepackage{adjustbox}
 
 % Configure the siunitx package
 \sisetup{
@@ -59,11 +61,12 @@
     chapters/theory,
     chapters/BoostedPhysics,
     chapters/experiment,
-    chapters/event_selection,
+    chapters/strategy,
+    %chapters/event_selection,
     chapters/object_id_reco_corr,
     chapters/conclusion,
     chapters/app_glossary,
-    chapters/Systematic_Uncertainties,
+    %chapters/Systematic_Uncertainties,
     chapters/Limit_Setting,
     chapters/Background_Estimation
 }
@@ -88,10 +91,11 @@
 \include{chapters/experiment}
 \include{chapters/BoostedPhysics}
 %ANA chapters
+\include{chapters/strategy}
 \include{chapters/object_id_reco_corr}
-\include{chapters/event_selection}
+%\include{chapters/event_selection}
 \include{chapters/Background_Estimation}
-\include{chapters/Systematic_Uncertainties}
+%\include{chapters/Systematic_Uncertainties}
 \include{chapters/Limit_Setting}
 
 %Conclusion
